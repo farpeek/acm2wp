@@ -21,11 +21,15 @@ Open the local folder where you have cloned or downloaded this github project fr
 
 Open this project's acm2wp.py file in VSCode
 
-Select and copy only the text with references of any open article from the digital library and place into an [input.html] file in the project folder.
+The steps for getting the right format of markup is a follows,
+* Select and copy only the article's text with references of any open article from the digital library.
+* Paste into the ACM Games wordpress editor window with visual mode selected.
+* Select text mode, copy that text with the refined html markup.
+* Then place into an [input.html] file in the project folder.
 
 Click Run+Debug in VSCode (SHIFT+CMD+D on Mac)
 
-Add command-line arguments for the files, "input.html output.html replacements.txt" and return will run the script
+Add command-line arguments for the files, "-Iinput.html -Ooutput.html -Rreplacements.txt" and return will run the script
 
 You may also install the HTML Preview extension to preview intput and output html files as they would in a browser, and check for conversions of reference links and headings, any corrections of digital library formatting, etc.
 

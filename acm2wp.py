@@ -4,7 +4,7 @@ import re
 
 def replace_strings_in_file(input_file_path, output_file_path, replacements):
     # Open the file and read the content
-    with open(input_file_path, mode='r', encoding='utf-8') as file:
+    with open(input_file_path.name, mode='r', encoding='utf-8') as file:
         content = file.read()
 
     # Iterate over the replacements and replace them
@@ -12,12 +12,12 @@ def replace_strings_in_file(input_file_path, output_file_path, replacements):
         content = re.sub(old, new, content)
 
     # Write the modified content to the new file
-    with open(output_file_path, mode='w', encoding='utf-8') as file:
+    with open(output_file_path.name, mode='w', encoding='utf-8') as file:
         file.write(content)
 
 def load_replacements(file_path):
     # Load the replacements from the file
-    with open(file_path, mode='r', encoding='utf-8') as file:
+    with open(file_path.name, mode='r', encoding='utf-8') as file:
         lines = file.readlines()
 
     # Create a dictionary from the lines
@@ -30,9 +30,9 @@ def main():
     parser = argparse.ArgumentParser(description="Replace strings in a file")
 
     # Add the arguments
-    parser.add_argument('input_file_path', type=str, help='The path to the input file')
-    parser.add_argument('output_file_path', type=str, help='The path to the output file')
-    parser.add_argument('replacements_file_path', type=str, help='The path to the replacements file')
+    parser.add_argument('-I', '--input_file_path', type=argparse.FileType('r'), help='The path to the input file')
+    parser.add_argument('-O', '--output_file_path', type=argparse.FileType('w'), help='The path to the output file')
+    parser.add_argument('-R', '--replacements_file_path', type=argparse.FileType('r'), help='The path to the replacements file')
 
     # Parse the arguments
     args = parser.parse_args()

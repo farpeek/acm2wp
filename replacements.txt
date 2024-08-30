@@ -10,8 +10,12 @@ h2
 h3
 h1
 h2
-https://dl\.acm\.org/doi/\d+\.\d+/\d+#
+https://dl\.acm\.org/doi/\d+\.\d+/\d+#core-
 #
+https://dl\.acm\.org/doi/\d+\.\d+/\d+#body-ref-
+#body-ref-
+<div class="external-links">
+<div class="external-links" style="font-size:x-small">
 INTRODUCTION
 Introduction
 BACKGROUND
